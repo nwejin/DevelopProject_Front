@@ -4,12 +4,13 @@ body {
   color: $black;
   margin: 0;
   padding: 0;
-  background-color: $bg-gray;
+  background-color: $white;
 }
 
 * {
   font-family: 'Pretendard-Regular';
   color: $black;
+  box-sizing: border-box;
 }
 
 a {
@@ -23,8 +24,8 @@ ul {
 .mainContainer {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 60px;
   width: 100%;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 60px);
   z-index: 1;
 }

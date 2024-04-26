@@ -61,7 +61,6 @@ export default function Closet({ params: { userId } }) {
 
   useEffect(() => {
     const accessToken = sessionStorage.getItem('accessToken');
-
     if (!accessToken) {
       setIsModalOpen(true); // 모달 열기
     }

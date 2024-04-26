@@ -20,7 +20,6 @@ const WeatherFromLocalStorage: React.FC = () => {
     weather: '',
     icon: '',
   });
-
   useEffect(() => {
     const fetchDataFromLocalStorage = (key: string) => {
       const dataString = localStorage.getItem(key);

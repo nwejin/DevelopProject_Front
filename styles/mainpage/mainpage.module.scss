@@ -1,23 +1,19 @@
 @import '../common.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-$primary-color: rgb(0, 0, 0);
-
-.maincontainer {
-  font-family: 'Roboto Mono', monospace;
-}
 
 /* 기본 스타일 */
 .weatherContainer {
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem; /* 상단 여백 추가 */
+  margin-bottom: 2rem; /* 하단 여백 추가 */
 }
 
-.all {
+.container {
   width: 100%;
-  font-family: 'Roboto Mono', monospace;
+  height: 100%;
+  // background-color: pink;
   justify-content: center;
   align-items: center;
 }
@@ -393,10 +389,4 @@ $primary-color: rgb(0, 0, 0);
   background-size: 100% 100%; /* 이미지가 컨테이너에 가득 차도록 설정 */
   background-position: center;
   margin: 0.5rem; /* 버튼 간의 간격 조정 */
-}
-.today {
-  font-size: 18px;
-}
-.temperatureTextBox {
-  font-size: 13px;
 }

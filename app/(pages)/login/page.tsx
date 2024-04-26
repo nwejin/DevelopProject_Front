@@ -85,63 +85,62 @@ const Login: React.FC = () => {
       router.push('/');
     } catch (error) {
       console.log('로그인 실패!', error);
-      setIsModalOpen(true);
+      alert('아이디 또는 비밀번호를 확인해주세요');
     }
-  };
-  const handleModalConfirm = () => {
-    setIsModalOpen(false);
   };
 
   return (
     <>
       <div className={styles.login_Container}>
-        <div className={styles.title}>로그인</div>
-        <form onSubmit={handleLogin}>
-          <div className={styles.content}>
-            {/* id */}
-            <div className={styles.login_Content_Container}>
-              <div className={styles.login_title}>아이디</div>
-              <input
-                ref={useridInputRef}
-                className={styles.login_input}
-                name="userid"
-                type="text"
-                value={userData.userid}
-                onChange={handleChange}
-                placeholder="아이디"
-              />
-              {useridError && <p className={styles.errorMsg}>{useridError}</p>}
+        <div className={styles.innerContainer}>
+          <div className={styles.title}>로그인</div>
+          <form onSubmit={handleLogin} className={styles.content}>
+            <div className={styles.inputBox}>
+              <div className={styles.login_Content_Container}>
+                <input
+                  ref={useridInputRef}
+                  className={styles.login_input}
+                  name="userid"
+                  type="text"
+                  value={userData.userid}
+                  onChange={handleChange}
+                  placeholder="아이디"
+                />
+                {useridError && (
+                  <p className={styles.errorMsg}>{useridError}</p>
+                )}
+              </div>
+              <div className={styles.login_Content_Container}>
+                <input
+                  ref={passwordInputRef}
+                  className={styles.login_input}
+                  type="password"
+                  name="password"
+                  value={userData.password}
+                  onChange={handleChange}
+                  placeholder="비밀번호"
+                />
+                {passwordError && (
+                  <p className={styles.errorMsg}>{passwordError}</p>
+                )}
+              </div>
+              {/* etc */}
             </div>
-            {/* password */}
-            <div className={styles.login_Content_Container}>
-              <div className={styles.login_title}>비밀번호</div>
-              <input
-                ref={passwordInputRef}
-                className={styles.login_input}
-                type="password"
-                name="password"
-                value={userData.password}
-                onChange={handleChange}
-                placeholder="비밀번호"
-              />
-              {passwordError && (
-                <p className={styles.errorMsg}>{passwordError}</p>
-              )}
-            </div>
-            {/* etc */}
-            <div className={styles.login_info}>
-              <div>아직 Weatherable Member가 아니신가요? </div>
-              <img src="bar.png" alt="" />
-              <Link href={'/signup'} className={styles.signup_text}>
-                <div>회원가입</div>
-              </Link>
-            </div>
+            <button type="submit" className={styles.login_Btn}>
+              로그인
+            </button>
+          </form>
+          <div className={styles.findBox}>
+            <p>아이디 찾기</p>
+            <p>비밀번호 찾기</p>
           </div>
-          <button type="submit" className={styles.login_Btn}>
-            로그인
-          </button>
-        </form>
-        <LoginFailModal isOpen={isModalOpen} onConfirm={handleModalConfirm} />
+        </div>
+        <div className={styles.login_info}>
+          <p>나만의 옷장을 공유해보세요</p>
+          <Link href={'/signup'} className={styles.signup_text}>
+            <p>회원가입</p>
+          </Link>
+        </div>
       </div>
     </>
   );

@@ -9,6 +9,8 @@ import Statistics from '../../../components/MyPage/Statistics';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import MoveLoginModal from '../../../components/MoveLoginModal';
+import { useDispatch } from 'react-redux';
+import { setUserId } from '../../../Store/userSlice/userSlice';
 
 function MyPage() {
   const [selectedComponent, setSelectedComponent] = useState('기본정보');
@@ -30,10 +32,20 @@ function MyPage() {
     setIsModalOpen(false);
     router.push('/login');
   };
+
+  const dispatch = useDispatch();
+  const logOut = () => {
+    // 로그아웃 시 userId 상태 초기화
+    dispatch(setUserId(''));
+    sessionStorage.clear(); // 세션 스토리지의 모든 값 제거. (2개 토큰 - R.T , A.T) 제거.
+    // 로그아웃 시 UI 갱신
+    close();
+  };
   return (
     <>
       <div className={styles.mypage_Container}>
         <MypageHeader />
+        <p onClick={logOut}>로그아웃</p>
         <div className={styles.mypage_underbar}></div>
         <div className={styles.mypage_components}>
           <div

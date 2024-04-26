@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../../styles/calendar/calendar.module.scss';
-import Link from 'next/link';
 import { getCodiInfo } from '../../service/getCodiInfoApi';
 
 const Calendar = () => {
@@ -129,17 +128,20 @@ const Calendar = () => {
 
   return (
     <div>
-      {' '}
-      <div className={styles['calendar-container']}>
+      <div className={styles.calendar_container}>
         <div className={styles['calendar-header']}>
           <div className={styles['calendar-buttons']}>
-            <button onClick={prevMonth}>이전 달</button>
+            <button onClick={prevMonth}>
+              <span className="material-symbols-outlined">chevron_left</span>
+            </button>
           </div>
           <div className={styles['calendar-title']}>
             {year}년 {month}월
           </div>
           <div className={styles['calendar-buttons']}>
-            <button onClick={nextMonth}>다음 달</button>
+            <button onClick={nextMonth}>
+              <span className="material-symbols-outlined">chevron_right</span>
+            </button>
           </div>
         </div>
         <div className={styles['calendar-body']}>

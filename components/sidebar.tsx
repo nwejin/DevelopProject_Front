@@ -46,6 +46,8 @@ export default function SideBar({ open, close }: props) {
     setLoggedIn(false);
     close();
   };
+  const [isNickName, setIsNickName] = useState('');
+  const [isImg, setIsIMG] = useState('');
 
   useEffect(() => {
     const accessToken = sessionStorage.getItem('accessToken');
@@ -55,6 +57,8 @@ export default function SideBar({ open, close }: props) {
         try {
           const fetchUser = await getUser();
           // console.log('유저데이터', fetchUser);
+          setIsNickName(fetchUser.nickname);
+          setIsIMG(fetchUser.image_path);
           dispatch(setUserNickName({ value: fetchUser.nickname }));
           dispatch(setUserImg({ value: fetchUser.image_path }));
         } catch (error) {

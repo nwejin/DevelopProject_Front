@@ -100,10 +100,8 @@ const SignUp: React.FC = () => {
     <>
       <div className={styles.signup_Container}>
         <div className={styles.title}>회원가입</div>
-
         <form onSubmit={handleSignUp}>
           <div className={styles.content}>
-            {/* id */}
             <div className={styles.signup_Content_Container}>
               <div className={styles.signup_title}>아이디</div>
               <input

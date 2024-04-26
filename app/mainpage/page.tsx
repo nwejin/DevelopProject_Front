@@ -14,20 +14,29 @@ const MainPage: React.FC = () => {
   const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false); // 모달 닫힌 상태
 
+  // useEffect(() => {
+  //   const accessToken = sessionStorage.getItem('accessToken');
+  //   if (!accessToken) {
+  //     setIsModalOpen(true); // 모달 열기
+  //   }
+  //   dispatch(hideBackButton());
+  // }, [dispatch]);
+
+  // const handleModalConfirm = () => {
+  //   setIsModalOpen(false);
+  //   router.push('/login');
+  // };
 
   return (
-    <div className={styles.all}>
+    <div className={styles.container}>
       <div className={styles.maincontainer}>
-        <div className={styles.test}>
-          <LocationWeather />
-        </div>
+        <div className={styles.test}>{/* <LocationWeather /> */}</div>
         <div className={styles.borderline}>
           <div className={styles.mainbuttoncontainer}>
             <Mainpage_button />
           </div>
         </div>
       </div>
-
     </div>
   );
 };

@@ -1,0 +1,56 @@
+.postContainer {
+  //   width: 600px;
+  width: 430px;
+  .postUser {
+    display: flex;
+    height: 30px;
+    width: 100%;
+    margin: 10px 0;
+    .postUserImg {
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+      }
+    }
+    .postUserName {
+      margin-left: 10px;
+      line-height: 30px;
+      font-weight: 600;
+    }
+  }
+  .postImg {
+    img {
+      width: 100%;
+    }
+  }
+  .postBtnBox {
+    display: flex;
+    margin: 10px 0 15px 0;
+
+    .postLikeBtn {
+      margin-right: 20px;
+      span.material-symbols-outlined {
+        width: 100px;
+        fill: 0;
+        // font-variation-settings: 'FILL' 0;
+      }
+    }
+
+    .postCmtBtn {
+      span.material-symbols-outlined {
+        width: 100px;
+        font-variation-settings: 'FILL' 0;
+      }
+    }
+  }
+  .postWriteId {
+    font-weight: 600;
+    margin: 10px 0;
+  }
+  .postWriteContent {
+    // white-space: nowrap;
+    // text-overflow: ellipsis;
+    // overflow: hidden;
+  }
+}

@@ -1,0 +1,32 @@
+.postImgList {
+  display: flex;
+  flex-wrap: wrap;
+  img {
+    width: 49%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+  }
+}
+.closetList {
+  display: flex;
+  flex-wrap: wrap;
+  .closetProduct {
+    width: 49%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    img {
+      width: 100%;
+    }
+    .productBrand {
+      font-weight: 600;
+      margin-top: 5px;
+    }
+    .productName {
+      color: gray;
+      margin: 5px 0;
+    }
+    .productPrice {
+      margin-bottom: 20px;
+    }
+  }
+}

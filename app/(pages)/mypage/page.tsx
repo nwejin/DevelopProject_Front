@@ -11,6 +11,7 @@ import Image from 'next/image';
 import MoveLoginModal from '../../../components/MoveLoginModal';
 import { useDispatch } from 'react-redux';
 import { setUserId } from '../../../Store/userSlice/userSlice';
+import Link from 'next/link';
 
 function MyPage() {
   const [selectedComponent, setSelectedComponent] = useState('기본정보');
@@ -45,7 +46,12 @@ function MyPage() {
     <>
       <div className={styles.mypage_Container}>
         <MypageHeader />
-        <p onClick={logOut}>로그아웃</p>
+        {isModalOpen ? (
+          <Link href="/login">로그인</Link>
+        ) : (
+          <p onClick={logOut}>로그아웃</p>
+        )}
+
         <div className={styles.mypage_underbar}></div>
         <div className={styles.mypage_components}>
           <div
@@ -82,7 +88,7 @@ function MyPage() {
         {selectedComponent === '기본정보' && <PersonalInfo />}
         {selectedComponent === '치수' && <Dimension />}
         {selectedComponent === '통계' && <Statistics />}
-        <MoveLoginModal isOpen={isModalOpen} onConfirm={handleModalConfirm} />
+        {/* <MoveLoginModal isOpen={isModalOpen} onConfirm={handleModalConfirm} /> */}
       </div>
     </>
   );

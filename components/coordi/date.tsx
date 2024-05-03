@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
-import Styles2 from '../../styles/codi/codi2.module.scss';
+import Styles from '../../styles/Coordi/coordi.module.scss';
+import { useRouter } from 'next/navigation';
 // 선택된 날짜를 URL에서 추출하는 함수
 function extractSelectedDateFromURL() {
   // window 객체의 존재 여부 확인
@@ -37,7 +38,20 @@ const SelectedDateDisplay = function ({ selectedDate }) {
   const extractedDate = extractSelectedDateFromURL();
 
   // 선택된 날짜가 있을 경우 해당 날짜를 표시, 없을 경우 추출된 날짜를 표시
-  return <div className={Styles2.tjsxor}>{selectedDate || extractedDate}</div>;
+
+  const router = useRouter();
+  const back = () => {
+    router.back();
+  };
+
+  return (
+    <div className={Styles.innerHeader}>
+      <button onClick={back}>
+        <span className="material-symbols-outlined">chevron_left</span>
+      </button>
+      <p>{selectedDate || extractedDate}</p>
+    </div>
+  );
 };
 
 export default SelectedDateDisplay;

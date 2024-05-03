@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import {
   getUserClothes,
   aiRecommendPost,
-} from '../../service/closetApiService';
+} from '../../../service/closetApiService';
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/navigation';
-import styles from '../../styles/closet/aiRecommend.module.scss';
+import styles from '../../../styles/closet/aiRecommend.module.scss';
 import Link from 'next/link';
-import MoveLoginModal from '../../components/MoveLoginModal';
-import { WeatherCheckModal } from '../../components/weatherCheckModal';
+import MoveLoginModal from '../../../components/MoveLoginModal';
+import { WeatherCheckModal } from '../../../components/weatherCheckModal';
 
 interface clothes {
   brand: string;

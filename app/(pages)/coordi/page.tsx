@@ -1,10 +1,10 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Calendar from '../../components/coordi/calendar';
-import WetherLocation from '../../components/mainpage/Tmfprlxhd';
-import Styles from '../../styles/calendar/calendar.module.scss';
+import Calendar from '../../../components/coordi/calendar';
+import WetherLocation from '../../../components/mainpage/Tmfprlxhd';
+import Styles from '../../../styles/calendar/calendar.module.scss';
 import { useDispatch } from 'react-redux';
-import { hideBackButton } from '../../Store/mainSlice/mainPageSlice';
+import { hideBackButton } from '../../../Store/mainSlice/mainPageSlice';
 import { useRouter } from 'next/navigation';
 
 const CalendarPage: React.FC = () => {
@@ -13,7 +13,9 @@ const CalendarPage: React.FC = () => {
 
   return (
     <div className={Styles.mainContainer}>
-      <div className={Styles.ggg}>{/* <WetherLocation /> */}</div>
+      {/* <div className={Styles.ggg}>
+        <WetherLocation />
+      </div> */}
       <Calendar />
     </div>
   );

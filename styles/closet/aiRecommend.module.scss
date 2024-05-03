@@ -3,92 +3,109 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
   position: relative;
   justify-content: center;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 1rem;
+  // background-color: red;
+  .refreshBox {
+    // background-color: pink;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    height: 3vh;
+  }
   .refreshBtn {
+    width: 10vw;
     border: none;
-    margin: 1rem 0;
-    width: 50vw;
-    height: 5vh;
     font-weight: 900;
-    border-radius: $radius-m;
-    color: white;
-    background: $theme-red-5;
+    background: $Primary;
+
+    span {
+      color: white;
+    }
   }
   .refreshBtnDisabled {
-    background: $black;
-    opacity: 0.1;
+    background: $gray3;
   }
 
   .mainContainer {
-    position: relative;
-    width: 70%;
-    height: 80vh;
+    // position: relative;
+    width: 100%;
+    // height: 50vh;
+    margin-top: 1rem;
+    // background-color: pink;
     @include flex();
     flex-direction: column;
-    .descText {
-      position: absolute;
-      top: 1vh;
-      color: $gray;
-    }
-    img {
-      height: 60vh;
-    }
-    div {
-      position: absolute;
+    // .descText {
+    //   position: absolute;
+    //   top: 1vh;
+    //   color: $gray;
+    // }
+    // img {
+    //   height: 60vh;
+    // }
+    .clothesInfo {
+      // position: absolute;
       background-color: white;
-      width: 30vw;
-      height: 10vh;
+      width: 80%;
+      height: 8vh;
       border-radius: $radius-m;
       border: 1px solid $lightgray;
+      margin: 0.1rem 0;
       @include flex();
       a {
         width: 100%;
         height: 100%;
-        // @include flex();
-        display: block;
-        overflow: hidden;
-        position: relative;
-        img {
-          // width: 30%;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 100%;
+        @include flex();
+        // background-color: pink;
+        justify-content: space-around;
+        // overflow: hidden;
+        // position: relative;
+        .imgBox {
+          width: 20%;
           height: 100%;
-          object-fit: contain;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          img {
+            // width: 100%;
+            // height: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+          }
+        }
+        .descBox {
+          height: 100%;
+          width: 70%;
+          // background-color: red;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          .brand {
+            font-size: 0.9rem;
+            font-weight: 900;
+          }
+          .productName {
+            font-size: 0.8rem;
+          }
+          .price {
+            font-size: 0.8rem;
+            color: $gray4;
+          }
         }
       }
-      span {
-        position: absolute;
-        font-size: 2rem;
-        color: $theme-red-5;
+      .noData {
+        color: $gray3;
+        font-size: 0.8rem;
       }
-    }
-    .outerBox {
-      height: 20vh;
-      top: 25%;
-      left: 3vw;
-    }
-    .topBox {
-      top: 30%;
-      left: 37vw;
-    }
-    .pantsBox {
-      top: 60%;
-    }
-    .shoesBox {
-      top: 80%;
-    }
-    .accessoryBox {
-      top: 15%;
-      width: 15vw;
-      height: 5vh;
     }
   }
 }

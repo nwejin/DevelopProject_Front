@@ -1,14 +1,13 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import styles from '../../styles/codi/codi.module.scss';
-import styles2 from '../../styles/codi/codi2.module.scss';
+import styles from '../../styles/Coordi/coordi.module.scss';
 import Cookies from 'js-cookie';
 import axios from 'axios';
 import { cookiesend } from '../../service/codiApiservice';
-import ClosetPage from '../../components/uploadcloset/uploadcloset';
+import ClosetPage from '../uploadcloset/uploadcloset';
 import { getCodiInfo } from '../../service/getCodiInfoApi';
-import MyComponent from '../codipage/image';
+import MyComponent from './image';
 import { RootState } from '../../Store/Store';
 import {
   selectMajor,
@@ -180,15 +179,11 @@ const CodiPage: React.FC<{}> = () => {
     dispatch(selectMiddle({ value: '' }));
   };
   return (
-    <div>
-      <div className={styles2.container}>
-        <div className={styles2.mainContainer}>
-          <img
-            src="https://weatherable.s3.ap-northeast-2.amazonaws.com/default_ai.png"
-            alt=""
-          />
+    <>
+      <div className={styles.coordiContainer}>
+        <div className={styles.mainContainer}>
           <div
-            className={`${styles2.uploadButton} ${styles2.accessoryBox}`}
+            className={`${styles.uploadButton} ${styles.accessoryBox}`}
             onClick={() => {
               openModal('capIndex');
               handlePartClick('Accessory');
@@ -211,7 +206,7 @@ const CodiPage: React.FC<{}> = () => {
             )}
           </div>
           <div
-            className={`${styles2.uploadButton} ${styles2.outerBox}`}
+            className={`${styles.uploadButton} ${styles.outerBox}`}
             onClick={() => {
               openModal('outerIndex');
               handlePartClick('Outer');
@@ -235,7 +230,7 @@ const CodiPage: React.FC<{}> = () => {
           </div>
 
           <div
-            className={`${styles2.uploadButton} ${styles2.topBox}`}
+            className={`${styles.uploadButton} ${styles.topBox}`}
             onClick={() => {
               openModal('topIndex');
               handlePartClick('Top');
@@ -259,7 +254,7 @@ const CodiPage: React.FC<{}> = () => {
           </div>
 
           <div
-            className={`${styles2.uploadButton} ${styles2.pantsBox}`}
+            className={`${styles.uploadButton} ${styles.pantsBox}`}
             onClick={() => {
               openModal('bottomIndex');
               handlePartClick('Pants');
@@ -285,7 +280,7 @@ const CodiPage: React.FC<{}> = () => {
           </div>
 
           <div
-            className={`${styles2.uploadButton} ${styles2.shoesBox}`}
+            className={`${styles.uploadButton} ${styles.shoesBox}`}
             onClick={() => {
               openModal('shoesIndex');
               handlePartClick('Shoes');
@@ -337,7 +332,7 @@ const CodiPage: React.FC<{}> = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

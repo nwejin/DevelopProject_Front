@@ -1,0 +1,67 @@
+.profileContainer {
+  width: 430px;
+  .profileHeader {
+    .profileInfoBox {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      .profileImg {
+        width: 100px;
+        border-radius: 100px;
+      }
+      .profileInfo {
+        margin-left: 10px;
+        .profileName {
+          font-size: 20px;
+          font-weight: 600;
+        }
+        .profileSize {
+          margin-top: 5px;
+          color: gray;
+        }
+      }
+    }
+    .profileBtnBox {
+      display: flex;
+      div {
+        width: 49%;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: rgb(231, 231, 231);
+        border-radius: 5px;
+      }
+      div:first-child {
+        margin-right: 2%;
+      }
+    }
+  }
+  .btnBox {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgb(205, 205, 205);
+    border-bottom: 1px solid rgb(205, 205, 205);
+    margin-top: 20px;
+    .listBtnDiv {
+      width: 49%;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      .listBtn {
+        width: 16px;
+      }
+    }
+    .codiBtnDiv {
+      width: 49%;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      .codiBtn {
+        width: 20px;
+      }
+    }
+    div:first-child {
+      margin-right: 2%;
+    }
+  }
+}

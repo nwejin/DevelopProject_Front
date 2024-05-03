@@ -1,0 +1,74 @@
+.PostListContainer {
+  width: 430px;
+  .profileDiv {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    img {
+      width: 100px;
+      border-radius: 100px;
+    }
+    .profileInfo {
+      margin-left: 10px;
+      .profileName {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .profileSize {
+        margin-top: 5px;
+        color: gray;
+      }
+    }
+  }
+  .followBtn {
+    margin-top: 20px;
+    margin-bottom: 14px;
+    width: 100%;
+    background-color: #ff6c3e;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .profileBox {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-top: 1px solid rgb(210, 210, 210);
+    border-bottom: 1px solid rgb(210, 210, 210);
+    div {
+    }
+  }
+  .postImgList {
+    display: flex;
+    flex-wrap: wrap;
+    img {
+      width: 49%;
+      margin-left: 1%;
+      margin-bottom: 1%;
+    }
+  }
+  .closetList {
+    display: flex;
+    flex-wrap: wrap;
+    .closetProduct {
+      width: 49%;
+      margin-left: 1%;
+      margin-bottom: 1%;
+      img {
+        width: 100%;
+      }
+      .productBrand {
+        font-weight: 600;
+        margin-top: 5px;
+      }
+      .productName {
+        color: gray;
+        margin: 5px 0;
+      }
+      .productPrice {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
